@@ -1,4 +1,5 @@
-name: lint
+---
+name: Lint Python
 
 on:
   pull_request:

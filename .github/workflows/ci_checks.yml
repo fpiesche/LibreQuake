@@ -1,4 +1,5 @@
-name: CI: Texture wads
+---
+name: CI Checks
 
 on:
   pull_request:

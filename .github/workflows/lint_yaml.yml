@@ -1,0 +1,24 @@
+---
+name: Lint Yaml
+
+on:
+  pull_request:
+    paths:
+      - "**.yml"
+      - "**.yaml"
+  push:
+    paths:
+      - "**.yml"
+      - "**.yaml"
+
+jobs:
+  yamllint:
+    runs-on: ubuntu-latest
+    name: yamllint
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v4
+      - name: flake8 Lint
+        uses: reviewdog/action-yamllint@v1
+        with:
+          fail_level: error

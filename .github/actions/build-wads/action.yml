@@ -1,0 +1,20 @@
+name: 'Build texture WADs'
+description: 'Greet someone and record the time'
+inputs:
+  upload-artifact:
+    description: 'Store the WADs as an artifact'
+    required: true
+    type: boolean
+runs:
+  using: 'docker'
+  image: 'toolkit/qwadman.Containerfile'
+  args:
+    - ${{ inputs.upload-artifact }}
+  steps:
+    - name: Build texture wads
+      shell: python3 ./texture-wads/compile_wads.py
+    - name: Store wads
+      uses: actions/upload-artifact@v4
+      with:
+        name: texture-wads-artifact
+        path: texture-wads/*.wad

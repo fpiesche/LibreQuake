@@ -1,0 +1,17 @@
+name: CI: Texture wads
+
+on:
+  pull_request:
+    paths:
+      - 'texture-wads/**'
+
+env:
+  PYTHONUNBUFFERED: 1
+
+jobs:
+  build_wads:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build wads
+      uses: .github/actions/build-wads

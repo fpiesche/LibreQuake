@@ -12,7 +12,6 @@ on:
 env:
   REVIEWDOG_REPORTER: "github-check"
 
-
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -24,7 +23,7 @@ jobs:
           python-version: 3.11
       - name: Set reviewdog reporter
         run: |
-          if [[ "${{ github.event.type }}" == "pull_request" ]]; then
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
             echo "REVIEWDOG_REPORTER=github-pr-review" >> $GITHUB_ENV
           else
             echo "REVIEWDOG_REPORTER=github-check" >> $GITHUB_ENV

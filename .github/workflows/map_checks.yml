@@ -32,7 +32,7 @@ jobs:
             echo "REVIEWDOG_REPORTER=github-check" >> $GITHUB_ENV
           fi
       - name: map lint
-        run: python bin/py/qmap_lint.py lq1/maps/src/e*/*/*.map | reviewdog -f=pep8 -diff="git diff FETCH_HEAD" --filter-mode=file --fail-level=any
+        run: python bin/py/qmap_lint.py lq1/maps/src/e*/*.map | reviewdog -f=pep8 -diff="git diff FETCH_HEAD" --filter-mode=file --fail-level=any
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: ${{ env.REVIEWDOG_REPORTER }}

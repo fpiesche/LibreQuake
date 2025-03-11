@@ -1,0 +1,43 @@
+name: map lint
+
+on:
+  push:
+    paths:
+      - "lq1/maps/src/dm/**.map"
+      - "lq1/maps/src/e?/**.map"
+  pull_request:
+    paths:
+      - "lq1/maps/src/dm/**.map"
+      - "lq1/maps/src/e?/**.map"
+  workflow_dispatch:
+
+jobs:
+  lint-campaign:
+    name: Lint campaign map files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+      - uses: reviewdog/action-setup@v1
+      - name: map lint
+        run: python bin/py/qmap_lint.py lq1/maps/src/e*/*/*.map | reviewdog -f=pep8 -diff="git diff FETCH_HEAD" --filter-mode=file --fail-level=any
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: ${{ "github-pr-check" if github.event.type == "pull_request" else "github-check" }}
+
+  lint-deathmatch:
+    name: Lint deathmatch map files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+      - uses: reviewdog/action-setup@v1
+      - name: map lint
+        run: python bin/py/qmap_lint.py lq1/maps/src/dm/*/*.map | reviewdog -f=pep8 -diff="git diff FETCH_HEAD" --filter-mode=file --fail-level=any
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: ${{ "github-pr-check" if github.event.type == "pull_request" else "github-check" }}

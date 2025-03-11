@@ -34,3 +34,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: ${{ env.REVIEWDOG_REPORTER }}
+          fail_level: warning

@@ -27,7 +27,7 @@ jobs:
       - name: Set reviewdog reporter
         run: |
           if [[ "${{ github.event.type }}" == "pull_request" ]]; then
-            echo "REVIEWDOG_REPORTER=github-pr-check" >> $GITHUB_ENV
+            echo "REVIEWDOG_REPORTER=github-pr-review" >> $GITHUB_ENV
           else
             echo "REVIEWDOG_REPORTER=github-check" >> $GITHUB_ENV
           fi

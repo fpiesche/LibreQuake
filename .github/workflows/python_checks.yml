@@ -12,6 +12,7 @@ on:
 env:
   REVIEWDOG_REPORTER: "github-check"
 
+
 jobs:
   lint:
     runs-on: ubuntu-latest

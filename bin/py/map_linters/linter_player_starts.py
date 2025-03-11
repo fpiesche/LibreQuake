@@ -1,6 +1,7 @@
 from collections.abc import Generator
 from . import Result, Linter
 
+
 class PlayerStartsLinter(Linter):
     def __init__(self, external_config: dict = {}):
         default_config = {

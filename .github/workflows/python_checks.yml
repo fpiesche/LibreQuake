@@ -7,7 +7,7 @@ on:
   pull_request:
     paths:
       - "**.py"
-  workflow_dispatch:
+  workflow_dispatch: {}
 
 env:
   REVIEWDOG_REPORTER: "github-check"

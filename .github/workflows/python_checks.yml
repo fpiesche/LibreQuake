@@ -9,6 +9,9 @@ on:
       - "**.py"
   workflow_dispatch:
 
+env:
+  REVIEWDOG_REPORTER: "github-check"
+
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -18,8 +21,15 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: 3.11
+      - name: Set reviewdog reporter
+        run: |
+          if [[ "${{ github.event.type }}" == "pull_request" ]]; then
+            echo "REVIEWDOG_REPORTER=github-pr-check" >> $GITHUB_ENV
+          else
+            echo "REVIEWDOG_REPORTER=github-check" >> $GITHUB_ENV
+          fi
       - name: flake8 Lint
         uses: reviewdog/action-flake8@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: ${{ "github-pr-check" if github.event.type == "pull_request" else "github-check" }}
+          reporter: ${{ env.REVIEWDOG_REPORTER }}

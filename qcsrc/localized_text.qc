@@ -36,14 +36,14 @@
 
 #ifdef __LIBREQUAKE__
 
-#define LOC_EPILOGUE_0	"\nAs the ethereal essence of your very\nbeing drifts through time and space,\nyou experience relentless calm and\nserene determination. You embrace the\nliminal, formless nature of your\nexistence within the amorphous expanse\nbetween realities.\n\nSuspended between the veils of life\nand death, among the realm of celestial\ndissolution, you wait to be called upon\nagain. To regain your corporeal form\nand step into the crucible of fate.\nTo finish your task and keep at bay the\nonslaught of cosmic horrors.\n"
-#define LOC_EPILOGUE_1	"EPISODE 1 COMPLETION TEXT GOES HERE"
-#define LOC_EPILOGUE_1_FREEWARE	"EPISODE 1 COMPLETION TEXT GOES HERE"
-#define LOC_EPILOGUE_2	"EPISODE 2 COMPLETION TEXT GOES HERE"
-#define LOC_EPILOGUE_3	"EPISODE 3 COMPLETION TEXT GOES HERE"
-#define LOC_EPILOGUE_4	"EPISODE 4 COMPLETION TEXT GOES HERE"
-#define LOC_EPILOGUE_RUNES	"ALL RUNES TEXT GOES HERE"
-#define LOC_EPILOGUE_FINALE	"GAME COMPLETION TEXT GOES HERE"
+#define LOC_EPILOGUE_0		"\nAs the ethereal essence of your very\nbeing drifts through time and space,\nyou experience relentless calm and\nserene determination. You embrace the\nliminal, formless nature of your\nexistence within the amorphous expanse\nbetween realities.\n\nSuspended between the veils of life\nand death, among the realm of celestial\ndissolution, you wait to be called upon\nagain. To regain your corporeal form\nand step into the crucible of fate.\nTo finish your task and keep at bay the\nonslaught of cosmic horrors.\n"
+#define LOC_EPILOGUE_1		"Congratulations! You have beaten Episode 1 of LibreQuake!"
+#define LOC_EPILOGUE_1_FREEWARE	LOC_EPILOGUE_1
+#define LOC_EPILOGUE_2		"Congratulations! You have beaten Episode 2 of LibreQuake!"
+#define LOC_EPILOGUE_3		"Congratulations! You have beaten Episode 3 of LibreQuake!"
+#define LOC_EPILOGUE_4		"Congratulations! You have beaten Episode 4 of LibreQuake!"
+#define LOC_EPILOGUE_RUNES	"You have collected all of the runes and may advance to the final map!"
+#define LOC_EPILOGUE_FINALE	"Thanks for playing the beta version of LibreQuake!"
 
 #else
 
@@ -269,7 +269,7 @@
 #define LOC_DEATH_ARMY 					" was shot by a Chosen"
 #define LOC_DEATH_ENFORCER 				" was mowed down by a Cyberhunter"
 #define LOC_DEATH_DOG 					" was gored by a Gore Hound"
-#define LOC_DEATH_OGRE 					" was demolished by a Deep One"
+#define LOC_DEATH_OGRE 					" was demolished by a Barrel Fang"
 #define LOC_DEATH_DEMON1 				" was disemboweled by a Moon Rat"
 #define LOC_DEATH_WIZARD 				" was shot by a Messenger"
 #define LOC_DEATH_ZOMBIE				" was pelted by a Deathless Cultist"

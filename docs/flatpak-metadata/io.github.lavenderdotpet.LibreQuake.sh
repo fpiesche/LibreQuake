@@ -24,7 +24,7 @@ if [[ ! -f "${HIDE_LAUNCHER}" ]]; then
     --text "Select which engine to launch" \
     --extra-button "Open user content directory" \
     --ok-label "Launch" \
-    --cancel-label "Quit"
+    --cancel-label "Quit" \
     --window-icon "/app/share/icons/hicolor/scalable/apps/io.github.lavenderdotpet.LibreQuake.svg")
 
   case "$CHOICE" in
